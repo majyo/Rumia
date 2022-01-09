@@ -1,4 +1,5 @@
 #include <Rumia.h>
+#include <memory>
 
 class Sandbox : public Rumia::Application
 {
@@ -8,8 +9,8 @@ public:
 };
 
 
-Rumia::Application* Rumia::CreateApplication()
+std::unique_ptr<Rumia::Application> Rumia::CreateApplication()
 {
-	return new Sandbox();
+	return std::make_unique<Rumia::Application>();
 }
 

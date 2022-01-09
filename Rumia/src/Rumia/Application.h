@@ -2,6 +2,8 @@
 
 #include "Core.h"
 
+#include <memory>
+
 namespace Rumia
 {
 	class RUMIA_API Application
@@ -13,6 +15,6 @@ namespace Rumia
 		void Run();
 	};
 
-	Application* CreateApplication();
+	std::unique_ptr<Rumia::Application> CreateApplication();
 }
 

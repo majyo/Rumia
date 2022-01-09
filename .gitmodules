@@ -1,0 +1,3 @@
+[submodule "Rumia/vendor/spdlog"]
+	path = Rumia/vendor/spdlog
+	url = https://github.com/gabime/spdlog
