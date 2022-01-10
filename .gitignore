@@ -27,7 +27,7 @@
 *.lib
 
 # Executables
-*.exe
+# *.exe
 *.out
 *.app
 
@@ -38,3 +38,5 @@
 bin/
 bin-int/
 *.user
+
+# Filter Exclude

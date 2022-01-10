@@ -4,6 +4,9 @@
     <Filter Include="Rumia">
       <UniqueIdentifier>{63DF0C0E-CFF3-34BF-9875-D81E044931F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rumia\Event">
+      <UniqueIdentifier>{F41E8399-60D4-FB8E-E9C8-F565557DF292}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Rumia.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Rumia\EntryPoint.h">
       <Filter>Rumia</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rumia\Event\ApplicationEvent.h">
+      <Filter>Rumia\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rumia\Event\Event.h">
+      <Filter>Rumia\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rumia\Event\KeyEvent.h">
+      <Filter>Rumia\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rumia\Event\MouseEvent.h">
+      <Filter>Rumia\Event</Filter>
     </ClInclude>
     <ClInclude Include="src\Rumia\Log.h">
       <Filter>Rumia</Filter>
