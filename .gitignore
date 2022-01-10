@@ -40,3 +40,4 @@ bin-int/
 *.user
 
 # Filter Exclude
+!/vendor/bin/
