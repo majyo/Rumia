@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include "Log.h"
 
 #ifdef RM_PLATFORM_WINDOWS

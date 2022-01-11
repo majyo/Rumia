@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Core.h"
+#include "rmpch.h"
 
-#include <memory>
+#include "Core.h"
+#include "Window.h"
 
 namespace Rumia
 {
@@ -13,6 +14,10 @@ namespace Rumia
 		virtual ~Application();
 
 		void Run();
+
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 	std::unique_ptr<Rumia::Application> CreateApplication();

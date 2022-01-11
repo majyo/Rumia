@@ -1,9 +1,7 @@
 #pragma once
 
+#include "rmpch.h"
 #include "Rumia/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Rumia
 {

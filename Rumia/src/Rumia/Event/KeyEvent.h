@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Rumia
 {
 	class RUMIA_API KeyEvent : public Event

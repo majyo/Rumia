@@ -2,7 +2,6 @@
 
 #include "Core.h"
 
-#include <memory>
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 
@@ -33,11 +32,12 @@ namespace Rumia
 #define RM_CORE_INFO(...)     ::Rumia::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define RM_CORE_WARN(...)     ::Rumia::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define RM_CORE_ERROR(...)    ::Rumia::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define RM_CORE_FATEL(...)    ::Rumia::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define RM_CORE_FATAL(...)    ::Rumia::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log micros
 #define RM_CLIENT_TRACE(...)    ::Rumia::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define RM_CLIENT_INFO(...)     ::Rumia::Log::GetClientLogger()->info(__VA_ARGS__)
 #define RM_CLIENT_WARN(...)     ::Rumia::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define RM_CLIENT_ERROR(...)    ::Rumia::Log::GetClientLogger()->error(__VA_ARGS__)
-#define RM_CLIENT_FATEL(...)    ::Rumia::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define RM_CLIENT_FATAL(...)    ::Rumia::Log::GetClientLogger()->critical(__VA_ARGS__)
+

@@ -10,6 +10,11 @@ workspace "Rumia"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Rumia/vendor/GLFW/include"
+
+include "Rumia/vendor/GLFW"
+
 project "Rumia"
     location "Rumia"
     kind "SharedLib"
@@ -17,6 +22,9 @@ project "Rumia"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    pchheader "rmpch.h"
+    pchsource "Rumia/src/rmpch.cpp"
 
     files
     {
@@ -27,8 +35,15 @@ project "Rumia"
     includedirs
     {
          "%{prj.name}/src",
-         "%{prj.name}/vendor/spdlog/include"
+         "%{prj.name}/vendor/spdlog/include",
+         "%{IncludeDir.GLFW}"
 	}
+
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
+    }
 
     filter "system:windows"
         cppdialect "C++17"
