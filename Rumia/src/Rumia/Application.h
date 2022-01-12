@@ -4,6 +4,7 @@
 
 #include "Core.h"
 #include "Window.h"
+#include "Rumia/Event/ApplicationEvent.h"
 
 namespace Rumia
 {
@@ -14,7 +15,10 @@ namespace Rumia
 		virtual ~Application();
 
 		void Run();
+		void OnEvent(Event& e);
 
+	private:
+		bool OnWindowClosed(WindowCloseEvent& e);
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;

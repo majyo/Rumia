@@ -7,9 +7,12 @@
 
 namespace Rumia
 {
+#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
 	Application::Application()
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	Application::~Application()
@@ -23,7 +26,7 @@ namespace Rumia
 
 		if (e.IsInCategory(EventCategoryApplication))
 		{
-			RM_CORE_TRACE("Event [{}] is in EventCategoryApplication. ", e);
+			RM_CORE_TRACE("Event [{0}] is in EventCategoryApplication. ", e);
 		}
 
 		while (m_Running)
@@ -32,6 +35,20 @@ namespace Rumia
 			glClear(GL_COLOR_BUFFER_BIT);
 			m_Window->OnUpdate();
 		}
+	}
+
+	void Application::OnEvent(Event& e)
+	{
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClosed));
+
+		RM_CORE_TRACE("{0}", e);
+	}
+
+	bool Application::OnWindowClosed(WindowCloseEvent& e)
+	{
+		m_Running = false;
+		return true;
 	}
 
 }
